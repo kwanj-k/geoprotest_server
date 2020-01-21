@@ -26,5 +26,7 @@ setup(
         "django-cors-headers==3.1.0",
         "djangorestframework-jwt==1.11.0",
         "django-grappelli==2.13.1",
+        "django-phone-field==1.8.0",
+        "cloudinary==1.19.1",
     ]
 )
