@@ -21,7 +21,7 @@ def current_year():
 
 class Sponsorship(CommonFieldsMixin):
     name = models.CharField(max_length=30, null=False, blank=False)
-    description = models.CharField(max_length=30, null=False, blank=False)
+    description = models.CharField(max_length=300, null=False, blank=False)
 
     def __str__(self):
         return self.name
