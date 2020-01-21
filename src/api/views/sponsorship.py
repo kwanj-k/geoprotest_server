@@ -30,10 +30,13 @@ class ApplicationCreateAPIView(CreateAPIView):
         if not sponsorship:
             message = {"error": "Sponsorship does not exist."}
             return Response(message, status.HTTP_404_NOT_FOUND)
-        application_exists = Application.objects.get(
-            student=request.user,
-            sponsorship=sponsorship
-        )
+        try:
+            application_exists = Application.objects.get(
+                student=request.user,
+                sponsorship=sponsorship
+            )
+        except:
+            application_exists = None
         if application_exists:
             message = {"error": "Application already sent."}
             return Response(message, status.HTTP_400_BAD_REQUEST)

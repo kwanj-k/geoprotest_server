@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework_swagger',
+    'cloudinary',
+    'phone_field',
     
     'src.api.apps.ApiConfig'
 ]
@@ -163,6 +165,13 @@ SWAGGER_SETTINGS = {
             'name': 'Authorization'
         }
     }
+}
+
+CLOUDINARY = {
+    'cloud_name': os.getenv('CLOUDINARY_NAME'),
+    'api_key': os.getenv('CLOUDINARY_KEY'),
+    'api_secret': os.getenv('CLOUDINARY_SECRET'),
+    'secure': True
 }
 
 
