@@ -15,6 +15,10 @@ class SponsorshipSerializer(serializers.ModelSerializer):
 class ApplicationSerializer(serializers.ModelSerializer):
     student = serializers.SerializerMethodField()
     sponsorship = serializers.SerializerMethodField()
+    email = serializers.SerializerMethodField()
+    
+    def get_email(self, obj):
+        return obj.student.email
 
     def get_student(self, obj):
         return obj.student.username
@@ -27,5 +31,5 @@ class ApplicationSerializer(serializers.ModelSerializer):
         fields = (
             'student', 'sponsorship', 'first_name', 'last_name', 'mobile', 'country',
             'city', 'school_name', 'degree', 'cover_letter', 'start', 'to', 'postal_code',
-            'birth_certificate', 'national_id', 'is_approved', 'is_rejected', 'pk'
+            'birth_certificate', 'national_id', 'is_approved', 'is_rejected', 'pk', 'email'
         )
