@@ -20,7 +20,7 @@ class ApplicationSerializer(serializers.ModelSerializer):
         return obj.student.username
 
     def get_sponsorship(self, obj):
-        return obj.sponsorship.name
+        return obj.sponsorship.description
 
     class Meta:
         model = Application
