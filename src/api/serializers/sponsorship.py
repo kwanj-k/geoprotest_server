@@ -14,16 +14,20 @@ class SponsorshipSerializer(serializers.ModelSerializer):
         
 class ApplicationSerializer(serializers.ModelSerializer):
     student = serializers.SerializerMethodField()
-    sponsorship = serializers.SerializerMethodField()
+    sponsorship_description = serializers.SerializerMethodField()
+    sponsorship_name = serializers.SerializerMethodField()
     email = serializers.SerializerMethodField()
     
     def get_email(self, obj):
         return obj.student.email
 
     def get_student(self, obj):
-        return obj.student.username
+        return '{} {}'.format(obj.first_name, obj.last_name)
 
-    def get_sponsorship(self, obj):
+    def get_sponsorship_name(self, obj):
+        return obj.sponsorship.name
+    
+    def get_sponsorship_description(self, obj):
         return obj.sponsorship.description
 
     class Meta:
