@@ -33,7 +33,7 @@ class ApplicationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Application
         fields = (
-            'student', 'sponsorship', 'first_name', 'last_name', 'mobile', 'country',
+            'student', 'sponsorship_description', 'first_name', 'last_name', 'mobile', 'country',
             'city', 'school_name', 'degree', 'cover_letter', 'start', 'to', 'postal_code',
-            'birth_certificate', 'national_id', 'is_approved', 'is_rejected', 'pk', 'email'
+            'birth_certificate', 'national_id', 'is_approved', 'is_rejected', 'pk', 'email', 'sponsorship_name',
         )
