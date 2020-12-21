@@ -10,10 +10,10 @@ from src.api.models.base import CommonFieldsMixin
 
 class MyUserManager(BaseUserManager):
     
-    def create_user(self, company, username, email, password=None):
+    def create_user(self, username, email, password=None):
         phash = make_password(password)
         user = self.model(
-            company=company, username=username, email=email, password=phash
+            username=username, email=email, password=phash
         )
         user.active = True
         user.deleted = False
