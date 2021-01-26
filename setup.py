@@ -17,7 +17,7 @@ setup(
         "python-decouple==3.1",
         "dj-database-url==0.5.0",
         "whitenoise==4.1.3",
-        "psycopg2-binary==2.8.3",
+        "psycopg2-binary==2.8.6",
         "django-rest-swagger==2.1.2",
         "gunicorn==19.9.0",
         "django-cors-middleware==1.4.0",

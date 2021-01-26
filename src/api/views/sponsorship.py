@@ -1,8 +1,7 @@
 """ Sponsorship views"""
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
-from rest_framework import status
-
+from rest_framework import status, viewsets
 from rest_framework.generics import (
     ListCreateAPIView,
     CreateAPIView,
@@ -12,8 +11,7 @@ from src.api.serializers.sponsorship import SponsorshipSerializer, ApplicationSe
 from src.api.models import Sponsorship, Application
 
 
-class SponsorshipListCreateAPIView(ListCreateAPIView):
-    """ List/Create sponsorships """
+class SponsorshipViewSet(viewsets.ModelViewSet):
     serializer_class = SponsorshipSerializer
     queryset = Sponsorship.objects.all()
 
@@ -49,6 +47,7 @@ class ApplicationCreateAPIView(CreateAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save(student=request.user, sponsorship=sponsorship)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
 
 class ApplicationListAPIView(ListAPIView):
     """ List applications """
