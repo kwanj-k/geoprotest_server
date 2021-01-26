@@ -3,7 +3,7 @@ from .user import (
     LoginGenericAPIView
 )
 from .sponsorship import (
-    SponsorshipListCreateAPIView,
+    SponsorshipViewSet,
     ApplicationCreateAPIView,
     ApplicationListAPIView
 )
