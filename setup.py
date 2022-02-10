@@ -12,7 +12,7 @@ setup(
     include_package_data=True,
     scripts=["manage.py"],
     install_requires=[
-        "Django==2.2.13",
+        "Django==2.2.27",
         "djangorestframework==3.10.2",
         "python-decouple==3.1",
         "dj-database-url==0.5.0",
